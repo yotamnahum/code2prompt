@@ -13,15 +13,16 @@ def generate_markdown_content(files_data, no_codeblock):
     
     content = []
     for file in files_data:
-        if len(file['content'].strip()) > 0:
+        content = file['content'].strip()
+        if len(content) > 0:
             file_info = (
                 f"## File: {file['path']}\n"
             )
             
             if no_codeblock:
-                file_code = f"### Code\n\n{file['content']}\n\n"
+                file_code = f"### Code\n\n{content}\n\n"
             else:
-                file_code = f"```{file['language']}\n{file['content']}\n```\n\n"
+                file_code = f"```{file['language']}\n{content}\n```\n\n"
             
             content.append(file_info + file_code)
     
