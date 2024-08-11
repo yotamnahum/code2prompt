@@ -15,11 +15,6 @@ def generate_markdown_content(files_data, no_codeblock):
     for file in files_data:
         file_info = (
             f"## File: {file['path']}\n\n"
-            f"- Extension: {file['extension']}\n"
-            f"- Language: {file['language']}\n"
-            f"- Size: {file['size']} bytes\n"
-            f"- Created: {file['created']}\n"
-            f"- Modified: {file['modified']}\n\n"
         )
         
         if no_codeblock:
