@@ -25,10 +25,10 @@ def generate_markdown_content(files_data, no_codeblock):
                 file_code = f"```{file['language']}\n{content}\n```\n\n"
             
             content.append(file_info + file_code)
-    
-    return (
+    result = (
         "# Table of Contents\n"
         + "".join(table_of_contents)
         + "\n"
         + "".join(content)
     )
+    return result.strip()
